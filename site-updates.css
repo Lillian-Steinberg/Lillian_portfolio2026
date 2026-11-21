@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap');
 
 /* Follow-on refinements for the home page and contact callout. */
-.story { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); border-top: 0; }
+.story { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); border-top: 0; margin-bottom: 18px; }
 .story-reverse { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); }
-.story-copy { min-width: 0; }
+.story-copy { min-width: 0; box-shadow: 0 18px 38px rgba(17, 5, 9, .38), 0 4px 12px rgba(17, 5, 9, .24); }
 .story-sentence {
   max-width: 100%;
   margin: 0;
@@ -13,7 +13,8 @@
 }
 .story-sentence strong { font-weight: 700; }
 
-/* Hero text sits directly over the photograph; only this panel uses cream text. */
+/* The header wordmark is one line, and the hero headline has clear shadow detail. */
+.wordmark { white-space: nowrap; }
 .hero-copy {
   width: min(620px, 52%);
   padding: 0;
@@ -21,7 +22,11 @@
   box-shadow: none;
   color: var(--cream);
 }
-.hero-copy h1 { color: var(--cream); font-weight: 300; }
+.hero-copy h1 {
+  color: var(--cream);
+  font-weight: 300;
+  text-shadow: 0 3px 18px rgba(17, 5, 9, .48), 0 1px 4px rgba(17, 5, 9, .32);
+}
 .hero-copy h1 strong { font-weight: 700; }
 
 .site-footer { position: relative; padding-top: 105px; }
@@ -38,7 +43,7 @@
   margin: -105px auto 56px 0;
   padding: clamp(26px, 4vw, 52px);
   background: var(--cream);
-  box-shadow: var(--soft-shadow);
+  box-shadow: 0 18px 38px rgba(17, 5, 9, .38), 0 4px 12px rgba(17, 5, 9, .24);
   color: var(--ink);
   text-decoration: none;
   transition: background-color .2s ease, box-shadow .2s ease, transform .2s ease;
@@ -46,7 +51,7 @@
 .footer-main:hover {
   transform: translateY(-3px);
   background: #fff6e8;
-  box-shadow: 0 16px 36px rgba(17, 5, 9, .27), 0 3px 10px rgba(17, 5, 9, .14);
+  box-shadow: 0 20px 42px rgba(17, 5, 9, .42), 0 5px 14px rgba(17, 5, 9, .28);
 }
 .footer-main:focus-visible { outline: 3px solid var(--cream); outline-offset: 4px; }
 .footer-copy { display: block; }
@@ -55,8 +60,9 @@
 .footer-arrow { flex: 0 0 auto; align-self: flex-end; font-size: 24px; }
 
 @media (max-width: 760px) {
-  .story, .story-reverse { grid-template-columns: minmax(0, 1fr); }
+  .story, .story-reverse { grid-template-columns: minmax(0, 1fr); margin-bottom: 12px; }
   .story-sentence { font-size: clamp(28px, 7vw, 40px); }
+  .wordmark { white-space: nowrap; }
   .site-footer { padding-top: 72px; }
   .footer-main { width: 88%; min-height: 0; margin: -58px 0 36px; padding: 26px; }
   .footer-heading { font-size: clamp(28px, 7vw, 42px); }
