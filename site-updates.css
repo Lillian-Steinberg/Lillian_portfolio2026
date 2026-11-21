@@ -1,9 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
 /* Follow-on refinements for the home page and contact callout. */
 .story { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); border-top: 0; }
 .story-reverse { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); }
 .story-copy { min-width: 0; }
+.story-sentence {
+  max-width: 100%;
+  margin: 0;
+  color: var(--ink);
+  font: 300 clamp(23px, 2.4vw, 36px)/1.28 var(--sans);
+  letter-spacing: -.045em;
+}
+.story-sentence strong { font-weight: 700; }
 
-/* Hero copy sits directly over the photograph; only this panel uses cream text. */
+/* Hero text sits directly over the photograph; only this panel uses cream text. */
 .hero-copy {
   width: min(620px, 52%);
   padding: 0;
@@ -13,8 +23,6 @@
 }
 .hero-copy h1 { color: var(--cream); }
 .hero-copy h1 strong { font-weight: 700; }
-.hero-copy .hero-note { color: rgba(245, 237, 223, .9); }
-.hero-copy .text-link { color: var(--cream); border-color: rgba(245, 237, 223, .8); }
 
 .site-footer { position: relative; padding-top: 105px; }
 .footer-image { margin-bottom: 0; }
@@ -48,6 +56,7 @@
 
 @media (max-width: 760px) {
   .story, .story-reverse { grid-template-columns: minmax(0, 1fr); }
+  .story-sentence { font-size: clamp(23px, 5.5vw, 32px); }
   .site-footer { padding-top: 72px; }
   .footer-main { width: 88%; min-height: 0; margin: -58px 0 36px; padding: 26px; }
   .footer-heading { font-size: clamp(28px, 7vw, 42px); }
