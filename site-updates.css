@@ -20,7 +20,7 @@
 }
 .story-sentence strong { font-weight: 700; }
 
-/* The wordmark remains on one line; hero heading uses the same light/strong weights. */
+/* One-line wordmark and light/strong hero heading. */
 .wordmark { white-space: nowrap; }
 .hero-copy {
   width: min(620px, 52%);
@@ -36,6 +36,36 @@
 }
 .hero-copy h1 > span { font-weight: 300; }
 .hero-copy h1 strong { font-weight: 700; }
+
+/* Full-width statement with a centered, overlapping strip of square images. */
+.beyond-work { position: relative; margin: 76px 0 96px; padding-bottom: 34px; }
+.beyond-heading {
+  display: flex;
+  min-height: 260px;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(32px, 7vw, 88px) 8.3vw clamp(72px, 10vw, 120px);
+  background: var(--cream);
+  box-shadow: 0 18px 38px rgba(17, 5, 9, .38), 0 4px 12px rgba(17, 5, 9, .24);
+  text-align: center;
+}
+.beyond-heading .story-sentence { max-width: 1100px; }
+.beyond-icons {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  gap: clamp(8px, 1.5vw, 22px);
+  width: min(1100px, 84%);
+  margin: clamp(-62px, -6vw, -42px) auto 0;
+}
+.beyond-icons img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  box-shadow: 0 10px 24px rgba(17, 5, 9, .34), 0 2px 6px rgba(17, 5, 9, .2);
+}
 
 .site-footer { position: relative; padding-top: 105px; }
 .footer-image { margin-bottom: 0; }
@@ -76,6 +106,10 @@
   .story .photo-grid, .story-reverse .photo-grid { order: 1; min-height: 0; }
   .story .story-copy, .story-reverse .story-copy { order: 2; min-height: 245px; margin: 14px; padding: 30px 8vw; }
   .story-sentence { font-size: clamp(38px, 9vw, 60px); }
+  .beyond-work { margin: 52px 0 72px; }
+  .beyond-heading { min-height: 220px; padding: 32px 6vw 76px; }
+  .beyond-icons { grid-template-columns: repeat(5, minmax(0, 1fr)); width: 88%; gap: 10px; margin-top: -46px; }
+  .beyond-icons img:nth-child(n + 6) { display: none; }
   .site-footer { padding-top: 72px; }
   .footer-main { width: 88%; min-height: 0; margin: -58px 0 36px; padding: 26px; }
   .footer-heading { font-size: clamp(28px, 7vw, 42px); }
