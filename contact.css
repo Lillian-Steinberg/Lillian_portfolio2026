@@ -1,0 +1,18 @@
+body.contact-page { min-height: 100vh; display: flex; flex-direction: column; }
+.contact-header { display: flex; align-items: flex-start; justify-content: space-between; padding: 25px 5.2vw; }
+.contact-back { display: inline-block; padding: 12px 15px; background: var(--cream); box-shadow: var(--soft-shadow); color: var(--ink); font-size: 11px; text-decoration: none; }
+.contact-content { display: grid; flex: 1; place-items: center; padding: 45px 8vw 70px; }
+.contact-card { width: min(760px, 100%); padding: clamp(32px, 6vw, 76px); background: var(--cream); box-shadow: var(--soft-shadow); color: var(--ink); }
+.contact-card .eyebrow { color: var(--muted); }
+.contact-card h1 { margin: 0; font: 600 clamp(42px, 7vw, 82px)/1.02 var(--sans); letter-spacing: -.065em; }
+.contact-card h1 em { font-style: normal; font-weight: 400; }
+.contact-card > p:not(.eyebrow) { max-width: 430px; margin: 24px 0 30px; color: var(--muted); font-size: 14px; line-height: 1.8; }
+.contact-email { display: inline-flex; gap: 25px; align-items: center; padding-bottom: 8px; border-bottom: 1px solid var(--ink); color: var(--ink); font-size: 14px; font-weight: 600; text-decoration: none; }
+.contact-footer { display: flex; justify-content: space-between; gap: 20px; margin: 0 8vw 30px; padding: 16px 20px; background: var(--cream); box-shadow: var(--soft-shadow); color: var(--muted); font-size: 10px; }
+.contact-footer a { color: var(--ink); text-decoration: none; }
+.contact-footer a:hover, .contact-back:hover { text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 600px) {
+  .contact-header { padding: 20px 6vw; }
+  .contact-content { padding: 35px 6vw 50px; }
+  .contact-footer { margin: 0 6vw 20px; flex-wrap: wrap; }
+}
