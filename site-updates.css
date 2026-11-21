@@ -69,6 +69,30 @@
   box-shadow: 0 10px 24px rgba(17, 5, 9, .34), 0 2px 6px rgba(17, 5, 9, .2);
 }
 
+/* Scroll-linked, subtle slide-in for each alternating project image row. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .story:not(.story-reverse) .photo-grid {
+      animation: photo-slide-from-left linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 45%;
+    }
+    .story.story-reverse .photo-grid {
+      animation: photo-slide-from-right linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 45%;
+    }
+  }
+}
+@keyframes photo-slide-from-left {
+  from { opacity: .65; transform: translateX(-24px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes photo-slide-from-right {
+  from { opacity: .65; transform: translateX(24px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
 .site-footer { position: relative; padding-top: 105px; }
 .footer-image { margin-bottom: 0; }
 .footer-main {
