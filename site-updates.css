@@ -1,19 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap');
 
-/* Follow-on refinements for the home page and contact callout. */
+/* Project row cards and alternating image/text layout. */
 .story { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); border-top: 0; margin-bottom: 18px; }
 .story-reverse { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); }
-.story-copy { min-width: 0; box-shadow: 0 18px 38px rgba(17, 5, 9, .38), 0 4px 12px rgba(17, 5, 9, .24); }
+.photo-grid { min-height: 370px; }
+.photo-grid img { min-height: 354px; }
+.story-copy {
+  min-width: 0;
+  min-height: 370px;
+  margin: 24px;
+  box-shadow: 0 18px 38px rgba(17, 5, 9, .38), 0 4px 12px rgba(17, 5, 9, .24);
+}
 .story-sentence {
   max-width: 100%;
   margin: 0;
   color: var(--ink);
-  font: 300 clamp(30px, 3.2vw, 46px)/1.22 var(--sans);
-  letter-spacing: -.045em;
+  font: 300 clamp(48px, 6vw, 78px)/1.08 var(--sans);
+  letter-spacing: -.065em;
 }
 .story-sentence strong { font-weight: 700; }
 
-/* The header wordmark is one line, and the hero headline has clear shadow detail. */
+/* The wordmark remains on one line; hero heading uses the same light/strong weights. */
 .wordmark { white-space: nowrap; }
 .hero-copy {
   width: min(620px, 52%);
@@ -27,6 +34,7 @@
   font-weight: 300;
   text-shadow: 0 3px 18px rgba(17, 5, 9, .48), 0 1px 4px rgba(17, 5, 9, .32);
 }
+.hero-copy h1 > span { font-weight: 300; }
 .hero-copy h1 strong { font-weight: 700; }
 
 .site-footer { position: relative; padding-top: 105px; }
@@ -59,10 +67,15 @@
 .footer-heading { display: block; font: 600 clamp(30px, 4vw, 54px)/1.08 var(--sans); letter-spacing: -.06em; }
 .footer-arrow { flex: 0 0 auto; align-self: flex-end; font-size: 24px; }
 
+@media (min-width: 1500px) {
+  .story, .photo-grid, .story-copy { min-height: 440px; }
+  .photo-grid img { min-height: 424px; }
+}
 @media (max-width: 760px) {
   .story, .story-reverse { grid-template-columns: minmax(0, 1fr); margin-bottom: 12px; }
-  .story-sentence { font-size: clamp(28px, 7vw, 40px); }
-  .wordmark { white-space: nowrap; }
+  .story .photo-grid, .story-reverse .photo-grid { order: 1; min-height: 0; }
+  .story .story-copy, .story-reverse .story-copy { order: 2; min-height: 245px; margin: 14px; padding: 30px 8vw; }
+  .story-sentence { font-size: clamp(38px, 9vw, 60px); }
   .site-footer { padding-top: 72px; }
   .footer-main { width: 88%; min-height: 0; margin: -58px 0 36px; padding: 26px; }
   .footer-heading { font-size: clamp(28px, 7vw, 42px); }
